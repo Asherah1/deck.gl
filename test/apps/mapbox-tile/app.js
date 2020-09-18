@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import React, {PureComponent} from 'react';
 import {render} from 'react-dom';
+import {_GlobeView as GlobeView} from '@deck.gl/core';
 import DeckGL from '@deck.gl/react';
 import {MVTLayer} from '@deck.gl/geo-layers';
 
@@ -13,7 +14,7 @@ const INITIAL_VIEW_STATE = {
   pitch: 0,
   longitude: -122.45,
   latitude: 37.78,
-  zoom: 12
+  zoom: 10
 };
 
 const MAP_LAYER_STYLES = {
@@ -79,6 +80,7 @@ class Root extends PureComponent {
   render() {
     return (
       <DeckGL
+        views={new GlobeView()}
         initialViewState={INITIAL_VIEW_STATE}
         controller={true}
         onClick={this._onClick}
