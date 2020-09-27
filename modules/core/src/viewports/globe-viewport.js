@@ -87,10 +87,10 @@ export default class GlobeViewport extends Viewport {
   getBounds(options = {}) {
     const unprojectOption = {targetZ: options.z || 0};
 
-    const left = this.unproject([0, this.height/2], unprojectOption);
-    const top = this.unproject([this.width/2, 0], unprojectOption);
-    const right = this.unproject([this.width, this.height/2], unprojectOption);
-    const bottom = this.unproject([this.width/2, this.height], unprojectOption);
+    const left = this.unproject([0, this.height / 2], unprojectOption);
+    const top = this.unproject([this.width / 2, 0], unprojectOption);
+    const right = this.unproject([this.width, this.height / 2], unprojectOption);
+    const bottom = this.unproject([this.width / 2, this.height], unprojectOption);
 
     if (right[0] < this.longitude) right[0] += 360;
     if (left[0] > this.longitude) left[0] -= 360;

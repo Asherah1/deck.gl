@@ -105,10 +105,8 @@ export function getOSMTileIndices(viewport, maxZ, zRange) {
       height: viewport.height,
       longitude,
       latitude,
-      zoom,
-      repeat: true
+      zoom
     });
-    console.log(viewport)
   }
 
   // Get the culling volume of the current camera
